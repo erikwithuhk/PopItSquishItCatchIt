@@ -1,7 +1,8 @@
-class gameTarget {
+class GameTarget {
   constructor() {
     this.pointValue = null;
   }
 }
 
-console.log('gameTarget');
+const test2 = new GameTarget();
+console.log(test2);
