@@ -1,8 +1,9 @@
 class GameTarget {
   constructor() {
-    this.pointValue = null;
+    this.pointValue = this.generatePointValue();
+  }
+  generatePointValue() {
+    const randomValue = Math.floor(Math.random() * 9) + 1;
+    return randomValue;
   }
 }
-
-const test2 = new GameTarget();
-console.log(test2);
