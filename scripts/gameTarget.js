@@ -3,3 +3,5 @@ class gameTarget {
     this.pointValue = null;
   }
 }
+
+console.log('gameTarget');
