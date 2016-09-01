@@ -40,6 +40,15 @@ describe('GameTargetView', () => {
   });
 
 
+  describe('#setClickListener', () => {
+
+    it('Sets point value based on clicked element\'s diameter', () => {
+      
+    });
+
+  });
+
+
   describe('#setTopValue', () => {
 
 

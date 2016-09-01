@@ -11,10 +11,12 @@ class GameTargetView {
   }
   setClickListener() {
     this.el.addEventListener('click', () => {
+
       this.el.style.transition = 'all 0.5s';
       this.el.style.opacity = 0;
       this.el.style.height = '20rem';
       this.el.style.width = '20rem';
+      this.gameTarget.setPointValue('bubbles', this.diameter);
       setTimeout(() => {
         document.body.removeChild(this.el);
       }, 500);
@@ -43,13 +45,11 @@ class GameTargetView {
       } else {
         this.diameter += diameterVariance;
       }
-      this.gameTarget.setPointValue('bubbles', this.diameter);
       this.el.style.height = `${this.diameter}rem`;
       this.el.style.width = `${this.diameter}rem`;
     } else {
       // Sets height and width values to a random integer between 1 and 10
       this.diameter = Math.floor(Math.random() * 9) + 1;
-      this.gameTarget.setPointValue('bubbles', this.diameter);
       this.el.style.height = `${this.diameter}rem`;
       this.el.style.width = `${this.diameter}rem`;
     }
