@@ -28,7 +28,7 @@ test.round.addGameTarget(gameTargetView.gameTarget);
 gameTargetView.render();
 test.el.appendChild(gameTargetView.el);
 
-let gameTargetView2 = new GameTargetView(1);
+let gameTargetView2 = new GameTargetView(2);
 test.round.addGameTarget(gameTargetView2.gameTarget);
 gameTargetView2.render();
 test.el.appendChild(gameTargetView2.el);

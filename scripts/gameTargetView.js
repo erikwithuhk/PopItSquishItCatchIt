@@ -18,7 +18,7 @@ class GameTargetView {
       this.el.style.width = '20rem';
       this.gameTarget.setPointValue('bubbles', this.diameter);
       setTimeout(() => {
-        document.querySelector('#board').removeChild(this.el);
+        this.el.style.display = 'none';
       }, 500);
     });
   }
