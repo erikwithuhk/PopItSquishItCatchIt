@@ -32,10 +32,10 @@ describe('GameTargetView', () => {
   });
 
 
-  describe('#setInitialTopValue', () => {
+  describe('#setTopValue', () => {
 
     beforeEach(() => {
-      gameTargetView.setInitialTopValue();
+      gameTargetView.setTopValue();
     });
 
     it('Sets the gameTarget node\'s top value between 0% and 100%', () => {
@@ -56,10 +56,10 @@ describe('GameTargetView', () => {
   });
 
 
-  describe('#setInitialDiameter', () => {
+  describe('#setDiameter', () => {
 
     beforeEach(() => {
-      gameTargetView.setInitialDiameter();
+      gameTargetView.setDiameter();
     });
 
     it('Sets the gameTarget node\'s height value between 1rem and 10rem', () => {

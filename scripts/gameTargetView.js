@@ -17,12 +17,12 @@ class GameTargetView {
       }, 500);
     });
   }
-  setInitialTopValue() {
+  setTopValue() {
     // Sets top value to a random number between 0 and 100
     this.top = Math.random() * 100;
     this.el.style.top = `${this.top}%`;
   }
-  setInitialDiameter() {
+  setDiameter() {
     // Sets height and width values to a random integer between 1 and 10
     this.diameter = Math.floor(Math.random() * 9) + 1;
     this.gameTarget.setPointValue('bubbles', this.diameter);
@@ -43,9 +43,9 @@ class GameTargetView {
   render() {
     this.el.setAttribute('class', 'circle');
     this.el.setAttribute('id', `circle${this.id}`);
-    this.setInitialDiameter();
+    this.setDiameter();
     this.setOpacity();
-    this.setInitialTopValue();
+    this.setTopValue();
     this.setClickListener();
   }
 }
