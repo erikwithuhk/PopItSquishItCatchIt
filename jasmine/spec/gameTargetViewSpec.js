@@ -21,6 +21,14 @@ describe('GameTargetView', () => {
       expect(gameTargetView.el).toEqual(document.createElement('div'));
     });
 
+    it('Initializes a diameter property set to null', () => {
+      expect(gameTargetView.diameter).toBeNull();
+    });
+
+    it('Initializes a top property set to null', () => {
+      expect(gameTargetView.top).toBeNull();
+    });
+
   });
 
 
@@ -71,6 +79,106 @@ describe('GameTargetView', () => {
       expect(widthInteger).toBeGreaterThan(0);
       expect(widthInteger).toBeLessThan(10);
 
+    });
+
+  });
+
+
+  // describe('#setClickListener', () => {
+  //   it('', () => {
+  //
+  //   });
+  // });
+
+
+  describe('#setOpacity', () => {
+
+    it('Sets the opacity of the GameTargetView to 1 if the diameter is 1', () => {
+      gameTargetView.diameter = 1;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).toEqual('1');
+
+      gameTargetView.diameter = 2;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).not.toEqual('1');
+    });
+
+    it('Sets the opacity of the GameTargetView to 0.75 if the diameter is between 2 and 4', () => {
+      gameTargetView.diameter = 1;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).not.toEqual('0.75');
+
+      gameTargetView.diameter = 2;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).toEqual('0.75');
+
+      gameTargetView.diameter = 3;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).toEqual('0.75');
+
+      gameTargetView.diameter = 4;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).toEqual('0.75');
+
+      gameTargetView.diameter = 5;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).not.toEqual('0.75');
+    });
+
+    it('Sets the opacity of the GameTargetView to 0.5 if the diameter is between 5 and 7', () => {
+      gameTargetView.diameter = 4;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).not.toEqual('0.5');
+
+      gameTargetView.diameter = 5;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).toEqual('0.5');
+
+      gameTargetView.diameter = 6;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).toEqual('0.5');
+
+      gameTargetView.diameter = 7;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).toEqual('0.5');
+
+      gameTargetView.diameter = 8;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).not.toEqual('0.5');
+    });
+
+    it('Sets the opacity of the GameTargetView to 0.25 if the diameter is between 8 and 10', () => {
+      gameTargetView.diameter = 7;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).not.toEqual('0.25');
+
+      gameTargetView.diameter = 8;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).toEqual('0.25');
+
+      gameTargetView.diameter = 9;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).toEqual('0.25');
+
+      gameTargetView.diameter = 10;
+      gameTargetView.setOpacity();
+
+      expect(gameTargetView.el.style.opacity).toEqual('0.25');
     });
 
   });

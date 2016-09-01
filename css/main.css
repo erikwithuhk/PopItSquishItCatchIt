@@ -9,8 +9,9 @@ body {
 
 div.circle {
   animation-name: crosscreen;
-  animation-duration: 40s;
-  background-color: blue;
+  animation-duration: 30s;
+  animation-timing-function: linear;
+  background-color: white;
   border-radius: 50%;
   position: absolute;
 }
