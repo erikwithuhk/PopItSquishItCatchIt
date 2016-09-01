@@ -42,11 +42,9 @@ describe('GameTargetView', () => {
 
   describe('#setTopValue', () => {
 
-    beforeEach(() => {
-      gameTargetView.setTopValue();
-    });
 
     it('Sets the gameTarget node\'s top value between 0% and 100% if not set', () => {
+      gameTargetView.setTopValue();
       const topValueWithPercent = gameTargetView.el.style.top;
       const removePercent = topValueWithPercent.slice(0, -1);
       const topValueInteger = parseInt(removePercent);
@@ -55,16 +53,19 @@ describe('GameTargetView', () => {
       expect(topValueInteger).toBeLessThan(101);
     });
 
-    it('Adds or subtracts a number between -5 and 5 from current top value', () => {
+    it('Adds or subtracts a number between -5% and 5% from current top value', () => {
+      gameTargetView.top = 10;
+      gameTargetView.setTopValue();
       const topValueWithPercent = gameTargetView.el.style.top;
       const removePercent = topValueWithPercent.slice(0, -1);
       const topValueInteger = parseInt(removePercent);
 
-      expect(topValueInteger).toBeGreaterThan(-1);
-      expect(topValueInteger).toBeLessThan(101);
+      expect(topValueInteger).toBeGreaterThan(4);
+      expect(topValueInteger).toBeLessThan(16);
     });
 
     it('Is a percent value', () => {
+      gameTargetView.setTopValue();
       const topValueWithPercent = gameTargetView.el.style.top;
       const percent = topValueWithPercent.slice(-1);
       expect(percent).toEqual('%');

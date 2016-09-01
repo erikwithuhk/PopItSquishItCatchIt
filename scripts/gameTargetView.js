@@ -21,9 +21,16 @@ class GameTargetView {
     });
   }
   setTopValue() {
-    // Sets top value to a random number between 0 and 100
-    this.top = Math.random() * 100;
-    this.el.style.top = `${this.top}%`;
+    if (this.top) {
+      // Adds or subtracts 5% from current top value
+      const topVariance = (Math.random() * 10) - 5;
+      this.top += topVariance;
+      this.el.style.top = `${this.top}%`;
+    } else {
+      // Sets top value to a random number between 0 and 100
+      this.top = Math.random() * 100;
+      this.el.style.top = `${this.top}%`;
+    }
   }
   setDiameter() {
     // Sets height and width values to a random integer between 1 and 10
@@ -45,7 +52,7 @@ class GameTargetView {
   }
   setTransition() {
     // Sets transition value to a random number between 1 and 3
-    this.transition = Math.random() * 2 + 1;
+    this.transition = (Math.random() * 2) + 1;
     this.el.style.transition = `all ${this.transition}s`;
   }
   render() {
@@ -55,19 +62,7 @@ class GameTargetView {
     this.setTransition();
     this.setClickListener();
     setTimeout(() => {
-      this.render()
-    }, 500);
+      this.render();
+    }, 2500);
   }
-  // resetDiameterTopValues() {
-  //   window.setInterval(function() {
-  //     const circleNode = node;
-  //     const newDiameter = randomDiameter();
-  //     const newTransition = randomTime();
-  //     circleNode.style.transition = `all ${newTransition}s`;
-  //     this.setDiameter();
-  //     const variance = `${initialTop + topVariance()}%`
-  //     circleNode.style.top = variance;
-  //     circleOpacity(circleNode, newDiameter);
-  //   }, 2500);
-  // }
 }
