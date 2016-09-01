@@ -1,6 +1,6 @@
 class RoundView {
   constructor() {
-    this.gameTargets = [];
+    this.round = new Round();
     this.el = document.createElement('div');
     this.render();
   }
