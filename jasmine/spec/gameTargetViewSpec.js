@@ -18,7 +18,15 @@ describe('GameTargetView', () => {
     });
 
     it('Creates a div element and stores it as a property', () => {
-      expect(gameTargetView.el).toEqual(document.createElement('div'));
+      expect(gameTargetView.el.tagName).toEqual('DIV');
+    });
+
+    it('Adds the class circle to the target node', () => {
+      expect(gameTargetView.el.className).toEqual('circle');
+    });
+
+    it('Adds the id circle[ID] to the target node', () => {
+      expect(gameTargetView.el.getAttribute('id')).toEqual('circle1');
     });
 
     it('Initializes a diameter property set to null', () => {
@@ -38,7 +46,16 @@ describe('GameTargetView', () => {
       gameTargetView.setTopValue();
     });
 
-    it('Sets the gameTarget node\'s top value between 0% and 100%', () => {
+    it('Sets the gameTarget node\'s top value between 0% and 100% if not set', () => {
+      const topValueWithPercent = gameTargetView.el.style.top;
+      const removePercent = topValueWithPercent.slice(0, -1);
+      const topValueInteger = parseInt(removePercent);
+
+      expect(topValueInteger).toBeGreaterThan(-1);
+      expect(topValueInteger).toBeLessThan(101);
+    });
+
+    it('Adds or subtracts a number between -5 and 5 from current top value', () => {
       const topValueWithPercent = gameTargetView.el.style.top;
       const removePercent = topValueWithPercent.slice(0, -1);
       const topValueInteger = parseInt(removePercent);
@@ -200,14 +217,6 @@ describe('GameTargetView', () => {
 
     beforeEach(() => {
       gameTargetView.render();
-    });
-
-    it('Adds the class circle to the target node', () => {
-      expect(gameTargetView.el.className).toEqual('circle');
-    });
-
-    it('Adds the id circle[ID] to the target node', () => {
-      expect(gameTargetView.el.getAttribute('id')).toEqual('circle1');
     });
 
     it('Sets the target node\'s top value', () => {

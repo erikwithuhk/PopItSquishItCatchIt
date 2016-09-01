@@ -6,14 +6,16 @@ class GameTargetView {
     this.top = null;
     this.transition = null;
     this.el = document.createElement('div');
+    this.el.setAttribute('class', 'circle');
+    this.el.setAttribute('id', `circle${this.id}`);
   }
   setClickListener() {
-    this.el.addEventListener('click', (e) => {
+    this.el.addEventListener('click', () => {
       this.el.style.transition = 'all 0.5s';
       this.el.style.opacity = 0;
       this.el.style.height = '20rem';
       this.el.style.width = '20rem';
-      window.setInterval(() => {
+      setTimeout(() => {
         document.body.removeChild(this.el);
       }, 500);
     });
@@ -47,13 +49,14 @@ class GameTargetView {
     this.el.style.transition = `all ${this.transition}s`;
   }
   render() {
-    this.el.setAttribute('class', 'circle');
-    this.el.setAttribute('id', `circle${this.id}`);
     this.setDiameter();
     this.setOpacity();
     this.setTopValue();
     this.setTransition();
     this.setClickListener();
+    setTimeout(() => {
+      this.render()
+    }, 500);
   }
   // resetDiameterTopValues() {
   //   window.setInterval(function() {
