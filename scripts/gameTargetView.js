@@ -12,6 +12,7 @@ class GameTargetView {
   setInitialDiameter() {
     // Sets height and width values to a random integer between 1 and 10
     const diameter = Math.floor(Math.random() * 9) + 1;
+    this.gameTarget.setPointValue(diameter);
     this.el.style.height = `${diameter}rem`;
     this.el.style.width = `${diameter}rem`;
   }

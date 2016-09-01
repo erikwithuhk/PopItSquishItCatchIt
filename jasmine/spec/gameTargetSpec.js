@@ -1,17 +1,23 @@
 describe('GameTarget', () => {
   let gameTarget;
 
+
   beforeEach(() => {
     gameTarget = new GameTarget();
   });
 
+
   describe('#new', () => {
+
     it('Sets a point value property', () => {
       expect(gameTarget.pointValue).toBeTruthy();
     });
+
   });
 
+
   describe('#generatePointValue', () => {
+
     it('Generates a random point value between 1 and 10', () => {
       const randomValue1 = gameTarget.generatePointValue();
       const randomValue2 = gameTarget.generatePointValue();
@@ -24,5 +30,21 @@ describe('GameTarget', () => {
       expect(randomValue3).toBeGreaterThan(0);
       expect(randomValue3).toBeLessThan(11);
     });
+
   });
+
+
+  describe('#setPointValue', () => {
+
+    beforeEach(() => {
+      gameTarget.setPointValue(4);
+    });
+
+    it('Sets the GameTarget\'s point value to the value passed in', () => {
+      expect(gameTarget.pointValue).toEqual(4);
+    });
+
+  });
+
+
 });
