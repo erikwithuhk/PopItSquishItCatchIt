@@ -37,11 +37,11 @@ describe('GameTarget', () => {
   describe('#setPointValue', () => {
 
     beforeEach(() => {
-      gameTarget.setPointValue(4);
+      gameTarget.setPointValue('bubbles', '4');
     });
 
     it('Sets the GameTarget\'s point value to the value passed in', () => {
-      expect(gameTarget.pointValue).toEqual(4);
+      expect(gameTarget.pointValue).toEqual(7);
     });
 
   });
