@@ -55,7 +55,7 @@ describe('GameTargetView', () => {
     });
 
     it('Sets the gameTarget node\'s height value between 1rem and 10rem', () => {
-      const heightWithRem = gameTargetView.el.height;
+      const heightWithRem = gameTargetView.el.style.height;
       const removeRem = heightWithRem.slice(0, -3);
       const heightInteger = parseInt(removeRem);
 
@@ -64,7 +64,7 @@ describe('GameTargetView', () => {
     });
 
     it('Sets the gameTarget node\'s width value between 1rem and 10rem', () => {
-      const widthWithRem = gameTargetView.el.width;
+      const widthWithRem = gameTargetView.el.style.width;
       const removeRem = widthWithRem.slice(0, -3);
       const widthInteger = parseInt(removeRem);
 

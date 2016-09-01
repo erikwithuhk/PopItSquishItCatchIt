@@ -5,13 +5,20 @@ class GameTargetView {
     this.el = document.createElement('div');
   }
   setInitialTopValue() {
-    const topValue = Math.floor(Math.random() * 100);
+    // Sets top value to a random number between 0 and 100
+    const topValue = Math.random() * 100;
     this.el.style.top = `${topValue}%`;
+  }
+  setInitialDiameter() {
+    // Sets height and width values to a random integer between 1 and 10
+    const diameter = Math.floor(Math.random() * 9) + 1;
+    this.el.style.height = `${diameter}rem`;
+    this.el.style.width = `${diameter}rem`;
   }
   render() {
     this.el.setAttribute('class', 'circle');
     this.el.setAttribute('id', `circle${this.id}`);
-    // Sets inital height and width
+    this.setInitialDiameter();
     this.setInitialTopValue();
   }
 }

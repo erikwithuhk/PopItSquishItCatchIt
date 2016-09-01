@@ -12,9 +12,7 @@ div.circle {
   animation-duration: 40s;
   background-color: blue;
   border-radius: 50%;
-  height: 5rem;
   position: absolute;
-  width: 5rem;
 }
 
 @keyframes crosscreen {
