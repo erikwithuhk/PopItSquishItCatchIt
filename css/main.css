@@ -1,6 +1,6 @@
 body {
-  /*background: url('https://pixabay.com/static/uploads/photo/2015/09/02/13/24/mountains-919040_960_720.jpg') no-repeat fixed;*/
-  background: url('http://weknowyourdreams.com/images/beach/beach-05.jpg') no-repeat fixed;
+  /* Photo credit Krystian Tambur https://unsplash.com/@atlasior */
+  background: url('../images/underwater.jpeg') no-repeat fixed;
   background-size: cover;
   height: 100%;
   width: 100%;
