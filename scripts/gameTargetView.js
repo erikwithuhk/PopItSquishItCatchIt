@@ -6,9 +6,17 @@ class GameTargetView {
     this.top = null;
     this.el = document.createElement('div');
   }
-  // setClickListener() {
-  //
-  // }
+  setClickListener() {
+    this.el.addEventListener('click', (e) => {
+      this.el.style.transition = 'all 0.5s';
+      this.el.style.opacity = 0;
+      this.el.style.height = '20rem';
+      this.el.style.width = '20rem';
+      window.setInterval(() => {
+        document.body.removeChild(this.el);
+      }, 500);
+    });
+  }
   setInitialTopValue() {
     // Sets top value to a random number between 0 and 100
     this.top = Math.random() * 100;
@@ -38,5 +46,6 @@ class GameTargetView {
     this.setInitialDiameter();
     this.setOpacity();
     this.setInitialTopValue();
+    this.setClickListener();
   }
 }
