@@ -9,10 +9,9 @@ class GameTargetView {
     this.el.style.top = `${topValue}%`;
   }
   render() {
-    // Adds circle class to this.el
-    // Adds consecutive id to this.el
+    this.el.setAttribute('class', 'circle');
+    this.el.setAttribute('id', `circle${this.id}`);
     // Sets inital height and width
-    // Sets initial random top value
     this.setInitialTopValue();
   }
 }
