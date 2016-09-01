@@ -76,11 +76,8 @@ describe('GameTargetView', () => {
 
   describe('#setDiameter', () => {
 
-    beforeEach(() => {
-      gameTargetView.setDiameter();
-    });
-
     it('Sets the gameTarget node\'s height value between 1rem and 10rem', () => {
+      gameTargetView.setDiameter();
       const heightWithRem = gameTargetView.el.style.height;
       const removeRem = heightWithRem.slice(0, -3);
       const heightInteger = parseInt(removeRem);
@@ -90,13 +87,41 @@ describe('GameTargetView', () => {
     });
 
     it('Sets the gameTarget node\'s width value between 1rem and 10rem', () => {
+      gameTargetView.setDiameter();
       const widthWithRem = gameTargetView.el.style.width;
       const removeRem = widthWithRem.slice(0, -3);
       const widthInteger = parseInt(removeRem);
 
       expect(widthInteger).toBeGreaterThan(0);
       expect(widthInteger).toBeLessThan(10);
+    });
 
+    it('Sets the gameTarget node\'s height value within 2rem of the current height', () => {
+      const initialDiameter = Math.floor(Math.random() * 2) - 2;
+      gameTargetView.diameter = initialDiameter;
+      gameTargetView.setDiameter();
+      const heightWithRem = gameTargetView.el.style.height;
+      const removeRem = heightWithRem.slice(0, -3);
+      const heightInteger = parseInt(removeRem);
+
+      expect(heightInteger).toBeGreaterThan(0);
+      expect(heightInteger).toBeLessThan(10);
+      expect(heightInteger).toBeGreaterThan(initialDiameter - 3);
+      expect(heightInteger).toBeLessThan(initialDiameter + 3);
+    });
+
+    it('Sets the gameTarget node\'s width value within 2rem of the current width', () => {
+      const initialDiameter = Math.floor(Math.random() * 2) - 2;
+      gameTargetView.diameter = initialDiameter;
+      gameTargetView.setDiameter();
+      const widthWithRem = gameTargetView.el.style.width;
+      const removeRem = widthWithRem.slice(0, -3);
+      const widthInteger = parseInt(removeRem);
+
+      expect(widthInteger).toBeGreaterThan(0);
+      expect(widthInteger).toBeLessThan(10);
+      expect(widthInteger).toBeGreaterThan(initialDiameter - 3);
+      expect(widthInteger).toBeLessThan(initialDiameter + 3);
     });
 
   });

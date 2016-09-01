@@ -22,7 +22,7 @@ class GameTargetView {
   }
   setTopValue() {
     if (this.top) {
-      // Adds or subtracts 5% from current top value
+      // Adds or subtracts up to 5% from current top value
       const topVariance = (Math.random() * 10) - 5;
       this.top += topVariance;
       this.el.style.top = `${this.top}%`;
@@ -33,11 +33,26 @@ class GameTargetView {
     }
   }
   setDiameter() {
-    // Sets height and width values to a random integer between 1 and 10
-    this.diameter = Math.floor(Math.random() * 9) + 1;
-    this.gameTarget.setPointValue('bubbles', this.diameter);
-    this.el.style.height = `${this.diameter}rem`;
-    this.el.style.width = `${this.diameter}rem`;
+    if (this.diameter) {
+      // Adds or subtracts up to 2rem from current diameter value
+      const diameterVariance = Math.floor((Math.random() * 4)) - 2;
+      if (this.diameter + diameterVariance < 1) {
+        this.diameter = 1;
+      } else if (this.diameter + diameterVariance > 10) {
+        this.diameter = 10;
+      } else {
+        this.diameter += diameterVariance;
+      }
+      this.gameTarget.setPointValue('bubbles', this.diameter);
+      this.el.style.height = `${this.diameter}rem`;
+      this.el.style.width = `${this.diameter}rem`;
+    } else {
+      // Sets height and width values to a random integer between 1 and 10
+      this.diameter = Math.floor(Math.random() * 9) + 1;
+      this.gameTarget.setPointValue('bubbles', this.diameter);
+      this.el.style.height = `${this.diameter}rem`;
+      this.el.style.width = `${this.diameter}rem`;
+    }
   }
   setOpacity() {
     if (this.diameter < 2) {
