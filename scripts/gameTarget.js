@@ -19,4 +19,7 @@ class GameTarget {
     };
     this.pointValue = pointValues[targetType][targetValue];
   }
+  getPointValue() {
+    return this.pointValue;
+  }
 }

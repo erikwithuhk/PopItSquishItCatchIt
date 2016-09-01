@@ -9,6 +9,7 @@ class RoundView {
     let gameTargetView;
     window.setInterval(() => {
       gameTargetView = new GameTargetView(id);
+      this.round.addGameTarget(gameTargetView.gameTarget);
       gameTargetView.render();
       this.el.appendChild(gameTargetView.el);
       id += 1;
@@ -21,4 +22,13 @@ class RoundView {
 }
 
 const test = new RoundView();
-test.generateGameTargets();
+// test.generateGameTargets();
+let gameTargetView = new GameTargetView(1);
+test.round.addGameTarget(gameTargetView.gameTarget);
+gameTargetView.render();
+test.el.appendChild(gameTargetView.el);
+
+let gameTargetView2 = new GameTargetView(1);
+test.round.addGameTarget(gameTargetView2.gameTarget);
+gameTargetView2.render();
+test.el.appendChild(gameTargetView2.el);
