@@ -4,6 +4,7 @@ class GameTargetView {
     this.id = id;
     this.diameter = null;
     this.top = null;
+    this.transition = null;
     this.el = document.createElement('div');
   }
   setClickListener() {
@@ -40,12 +41,30 @@ class GameTargetView {
       this.el.style.opacity = 0.25;
     }
   }
+  setTransition() {
+    // Sets transition value to a random number between 1 and 3
+    this.transition = Math.random() * 2 + 1;
+    this.el.style.transition = `all ${this.transition}s`;
+  }
   render() {
     this.el.setAttribute('class', 'circle');
     this.el.setAttribute('id', `circle${this.id}`);
     this.setDiameter();
     this.setOpacity();
     this.setTopValue();
+    this.setTransition();
     this.setClickListener();
   }
+  // resetDiameterTopValues() {
+  //   window.setInterval(function() {
+  //     const circleNode = node;
+  //     const newDiameter = randomDiameter();
+  //     const newTransition = randomTime();
+  //     circleNode.style.transition = `all ${newTransition}s`;
+  //     this.setDiameter();
+  //     const variance = `${initialTop + topVariance()}%`
+  //     circleNode.style.top = variance;
+  //     circleOpacity(circleNode, newDiameter);
+  //   }, 2500);
+  // }
 }

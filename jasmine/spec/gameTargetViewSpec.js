@@ -84,13 +84,6 @@ describe('GameTargetView', () => {
   });
 
 
-  // describe('#setClickListener', () => {
-  //   it('', () => {
-  //
-  //   });
-  // });
-
-
   describe('#setOpacity', () => {
 
     it('Sets the opacity of the GameTargetView to 1 if the diameter is 1', () => {
@@ -184,6 +177,25 @@ describe('GameTargetView', () => {
   });
 
 
+  describe('#setTransition', () => {
+
+    beforeEach(() => {
+      gameTargetView.setTransition();
+    });
+
+
+    it('Sets the gameTarget node\'s transition duration to between 1s and 3s', () => {
+      const durationWithS = gameTargetView.el.style.transitionDuration;
+      const removeS = durationWithS.slice(0, -1);
+      const duration = parseInt(removeS);
+
+      expect(duration).toBeGreaterThan(0);
+      expect(duration).toBeLessThan(4);
+    });
+
+  });
+
+
   describe('#render', () => {
 
     beforeEach(() => {
@@ -198,16 +210,20 @@ describe('GameTargetView', () => {
       expect(gameTargetView.el.getAttribute('id')).toEqual('circle1');
     });
 
-    it('Sets the target node\'s inital top value', () => {
+    it('Sets the target node\'s top value', () => {
       expect(gameTargetView.el.style.top).toBeTruthy();
     });
 
-    it('Sets the target node\'s inital height value', () => {
+    it('Sets the target node\'s height value', () => {
       expect(gameTargetView.el.style.height).toBeTruthy();
     });
 
-    it('Sets the target node\'s inital width value', () => {
+    it('Sets the target node\'s width value', () => {
       expect(gameTargetView.el.style.height).toBeTruthy();
+    });
+
+    it('Sets the target node\'s transition value', () => {
+      expect(gameTargetView.el.style.transition).toBeTruthy();
     });
 
   });

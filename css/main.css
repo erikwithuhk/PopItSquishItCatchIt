@@ -14,9 +14,8 @@ div.circle {
   background-color: white;
   border-radius: 50%;
   position: absolute;
-  -webkit-transition: all 1sec;
-  -o-transition: all 1sec;
-  transition: all 1sec;
+  transition-property: all;
+  transition-timing-function: ease-in-out;
 }
 
 @keyframes crosscreen {
