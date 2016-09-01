@@ -1,6 +1,7 @@
 body {
   /* Photo credit Krystian Tambur https://unsplash.com/@atlasior */
   background: url('../images/underwater.jpeg') no-repeat center center fixed;
+  -webkit-background-size: cover;
   background-size: cover;
   height: 100%;
   width: 100%;
