@@ -2,7 +2,7 @@ class Round {
   constructor() {
     this.score = 0;
     this.gameTargets = [];
-    this.timeRemaining = 10;
+    this.timeRemaining = 30;
     this.countdownTimer();
     this.gameOver = false;
   }
@@ -10,6 +10,7 @@ class Round {
     this.gameTargets.push(gameTarget);
   }
   countdownTimer() {
+    console.log(this.timeRemaining);
     window.setInterval(() => {
       if (this.timeRemaining > 0) {
         this.timeRemaining -= 1;
