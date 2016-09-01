@@ -13,9 +13,16 @@ describe('RoundView', () => {
       expect(roundView.gameTargets).toEqual(jasmine.any(Array));
     });
 
-    it('Creates a div with the id board', () => {
+    it('Creates a div and stores is as el', () => {
       expect(roundView.el.tagName).toEqual('DIV');
-      expect(roundView.el.getAttribute('id').toEqual('board');
+    });
+
+    it('Appends the board div to the document body', () => {
+      const containerDiv = document.createElement('div');
+      containerDiv.setAttribute('id', 'container');
+      document.body.appendChild(containerDiv);
+
+      expect(containerDiv.children[0].getAttribute('id')).toEqual('board');
     });
 
   });
@@ -27,11 +34,26 @@ describe('RoundView', () => {
       roundView.generateGameTargets();
     });
 
-    it('Generates new GameTargetViews and pushes them into the this.gameTargets array', () => {
-      expect(roundView.gameTargets[0]).toEqual(jasmine.any(GameTargetView));
+    it('Generates new GameTargetViews and pushes their GameTargets into the this.gameTargets array', () => {
+      expect(roundView.gameTargets[0]).toEqual(jasmine.any(GameTarget));
     });
 
-    it('Appends ');
+    it('Appends GameTargetView to board node', () => {
+      expect(roundView.el.children[0]).toEqual(jasmine.any(GameTarget.el));
+    });
+
+  });
+
+
+  describe('#render', () => {
+
+    beforeEach(() => {
+      roundView.render();
+    });
+
+    it('Sets the el ID to board', () => {
+      expect(roundView.el.getAttribute('id')).toEqual('board');
+    });
 
   });
 

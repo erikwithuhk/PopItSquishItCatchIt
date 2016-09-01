@@ -2,15 +2,23 @@ class RoundView {
   constructor() {
     this.gameTargets = [];
     this.el = document.createElement('div');
-    this.el.setAttribute('id', 'board');
+    this.render();
   }
   generateGameTargets() {
     let id = 1;
+    let gameTargetView;
     window.setInterval(() => {
-      const gameTargetView = new GameTargetView(id);
+      gameTargetView = new GameTargetView(id);
       gameTargetView.render();
-      document.body.appendChild(gameTargetView.el)
+      this.el.appendChild(gameTargetView.el);
       id += 1;
     }, 500);
   }
+  render() {
+    this.el.setAttribute('id', 'board');
+    document.body.querySelector('#container').appendChild(this.el);
+  }
 }
+
+const test = new RoundView();
+test.generateGameTargets();
