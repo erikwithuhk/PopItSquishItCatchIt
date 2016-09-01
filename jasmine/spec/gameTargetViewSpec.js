@@ -10,11 +10,11 @@ describe('GameTargetView', () => {
   describe('#new', () => {
 
     it('Creates a new GameTarget and stores is as a property', () => {
-      expect(gameTargetView.gameTarget).toEqual(new GameTarget());
+      expect(gameTargetView.gameTarget).toEqual(jasmine.any(GameTarget));
     });
 
     it('Accepts an index number as an argument and stores it as a property', () => {
-      expect(gameTargetView.index).toEqual(1);
+      expect(gameTargetView.id).toEqual(1);
     });
 
     it('Creates a div element and stores it as a property', () => {
