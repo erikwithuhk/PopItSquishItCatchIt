@@ -1,4 +1,4 @@
-class Target {
+class GameTarget {
   constructor() {
     this.pointValue = this.generatePointValue();
   }
