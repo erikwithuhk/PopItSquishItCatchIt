@@ -1,13 +1,13 @@
 describe('GameTarget', () => {
-  let gameTarget;
+  let target;
 
   beforeEach(() => {
-    gameTarget = new GameTarget();
+    target = new Target();
   });
 
   describe('#new', () => {
     it('Stores a point value', () => {
-      const points = gameTarget.pointValue;
+      const points = target.pointValue;
 
       expect(points).toBeTruthy();
     });
@@ -15,9 +15,9 @@ describe('GameTarget', () => {
 
   describe('#generatePointValue', () => {
     it('Generates a random point value between 1 and 10', () => {
-      const randomValue1 = gameTarget.generatePointValue();
-      const randomValue2 = gameTarget.generatePointValue();
-      const randomValue3 = gameTarget.generatePointValue();
+      const randomValue1 = target.generatePointValue();
+      const randomValue2 = target.generatePointValue();
+      const randomValue3 = target.generatePointValue();
 
       expect(randomValue1).toBeGreaterThan(0);
       expect(randomValue1).toBeLessThan(11);
