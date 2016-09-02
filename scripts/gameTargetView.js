@@ -9,18 +9,6 @@ class GameTargetView {
     this.el.setAttribute('class', 'circle');
     this.el.setAttribute('id', `circle${this.id}`);
   }
-  setClickListener() {
-    this.el.addEventListener('click', () => {
-      this.el.style.transition = 'all 0.5s';
-      this.el.style.opacity = 0;
-      this.el.style.height = '20rem';
-      this.el.style.width = '20rem';
-      this.gameTarget.setPointValue('bubbles', this.diameter);
-      setTimeout(() => {
-        this.el.style.display = 'none';
-      }, 500);
-    });
-  }
   setTopValue() {
     if (this.top) {
       // Adds or subtracts up to 5% from current top value
@@ -80,7 +68,7 @@ class GameTargetView {
     this.setOpacity();
     this.setTopValue();
     this.setTransition();
-    this.setClickListener();
+    // this.setClickListener();
     this.changeSize();
   }
 }
