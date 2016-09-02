@@ -1,6 +1,6 @@
 class RoundView {
-  constructor(timerView) {
-    this.round = new Round();
+  constructor(round, timerView) {
+    this.round = round || new Round();
     this.timerView = timerView || new TimerView();
     this.el = document.createElement('div');
   }
@@ -26,8 +26,3 @@ class RoundView {
     this.generateGameTargets();
   }
 }
-//
-// const test = new RoundView();
-// test.render();
-// test.generateGameTargets();
-// test.round.tick();

@@ -11,7 +11,6 @@ class GameTargetView {
   }
   setClickListener() {
     this.el.addEventListener('click', () => {
-
       this.el.style.transition = 'all 0.5s';
       this.el.style.opacity = 0;
       this.el.style.height = '20rem';
@@ -36,7 +35,8 @@ class GameTargetView {
   }
   setDiameter() {
     if (this.diameter) {
-      // Adds or subtracts up to 2rem from current diameter value
+      // Adds or subtracts up to 2rem from current diameter value unless
+      // it is out of range (1–10)
       const diameterVariance = Math.floor((Math.random() * 4)) - 2;
       if (this.diameter + diameterVariance < 1) {
         this.diameter = 1;

@@ -1,18 +1,24 @@
 class Game {
-  constructor() {
-    this.timer = new Timer(30);
+  constructor(roundLength) {
+    this.roundLength = roundLength || 30;
+    this.timer = new Timer(this.roundLength);
     this.timerView = new TimerView(this.timer);
-    this.roundView = new RoundView(this.timerView);
+    this.round = new Round();
+    this.roundView = new RoundView(this.round, this.timerView);
   }
   startRound() {
-    // while (this.timer.roundOver() !== true) {
       this.roundView.render();
+      this.checkStatus();
+  }
+  checkStatus() {
+    if (!this.round.over()) {
       window.setInterval(() => {
-          this.timer.countDown();
-          this.timerView.render();
+        this.timer.countDown();
+        this.timerView.render();
       }, 1000);
-    // }
-    // this.endRound();
+    } else {
+      this.endRound();
+    }
   }
   endRound() {
     this.roundView.clearGameTargets();

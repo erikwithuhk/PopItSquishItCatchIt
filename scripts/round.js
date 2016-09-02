@@ -3,7 +3,7 @@ class Round {
     this.score = 0;
     this.gameTargets = [];
     this.timeLimit = 30;
-    this.gameOver = false;
+    this.roundOver = false;
   }
   addGameTarget(gameTarget) {
     this.gameTargets.push(gameTarget);
@@ -16,5 +16,8 @@ class Round {
       return curr + prev;
     });
     return totalPoints;
+  }
+  over() {
+    return this.roundOver;
   }
 }
