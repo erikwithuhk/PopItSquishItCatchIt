@@ -25,6 +25,10 @@ body {
   color: red;
 }
 
+.time-up-timer {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 div.circle {
   animation-name: crosscreen;
   animation-duration: 30s;
