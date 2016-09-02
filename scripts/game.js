@@ -17,6 +17,3 @@ class Game {
     this.roundView.clearGameTargets();
   }
 }
-
-const test = new Game();
-test.startRound();
