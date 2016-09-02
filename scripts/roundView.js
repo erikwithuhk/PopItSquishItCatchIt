@@ -23,6 +23,7 @@ class RoundView {
       gameTargetNode.style.height = '20rem';
       gameTargetNode.style.width = '20rem';
       gameTargetView.gameTarget.setPointValue('bubbles', gameTargetView.diameter);
+      this.scoreView.render();
       setTimeout(() => {
         gameTargetNode.style.display = 'none';
       }, 500);
@@ -32,11 +33,15 @@ class RoundView {
     clearInterval(this.generationInterval);
     const targetNodes = document.querySelectorAll('.circle');
     targetNodes.forEach((target) => {
-      document.querySelector('#board').removeChild(target);
+      document.querySelector('.board').removeChild(target);
     });
   }
+  endRound() {
+    this.clearGameTargets();
+    this.el.setAttribute('class', `${this.el.getAttribute('class')} round-over`);
+  }
   render() {
-    this.el.setAttribute('id', 'board');
+    this.el.setAttribute('class', 'board');
     this.timerView.render();
     this.timerView.appendToBoard(this.el);
     this.scoreView.render();

@@ -9,9 +9,11 @@ class Timer {
   countDown() {
     if (this.timeRemaining > 1) {
       this.timeRemaining -= 1;
+    } else if (this.timeRemaining === 1) {
+      this.timeUp = true;
+      this.timeRemaining -= 1;
     } else {
       this.timeRemaining = 0;
-      this.timeUp = true;
     }
   }
   getCurrentTime() {

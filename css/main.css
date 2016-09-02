@@ -13,6 +13,10 @@ body {
   background-size: cover;
 }
 
+div.round-over {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
 div.timer,
 div.current-score {
   color: #fff;
@@ -22,7 +26,7 @@ div.current-score {
 }
 
 div.timer {
-  font-size: 50vmin;
+  font-size: 33vmin;
   letter-spacing: -0.02em;
   padding-top: 33vh;
   line-height: 33vh;
@@ -37,13 +41,8 @@ div.final-seconds-timer {
   color: red;
 }
 
-div.time-up-timer {
-  background-color: rgba(0, 0, 0, 0.5);
-  z-index: 2;
-}
-
 div.current-score {
-  font-size: 10vmin;
+  font-size: 8vmin;
   line-height: 33vh;
   text-align: center;
   z-index: 0;
