@@ -3,7 +3,7 @@ class Timer {
     this.timeRemaining = initialTime;
     this.timeUp = false;
   }
-  roundOver() {
+  over() {
     return this.timeUp;
   }
   countDown() {

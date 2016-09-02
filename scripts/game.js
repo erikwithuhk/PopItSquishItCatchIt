@@ -5,22 +5,22 @@ class Game {
     this.timerView = new TimerView(this.timer);
     this.round = new Round();
     this.roundView = new RoundView(this.round, this.timerView);
+    this.tick = setInterval(() => { this.checkStatus() }, 1000);
   }
   startRound() {
       this.roundView.render();
       this.checkStatus();
   }
   checkStatus() {
+    console.log('tick');
     if (!this.round.over()) {
-      window.setInterval(() => {
-        this.timer.countDown();
-        this.timerView.render();
-      }, 1000);
+      this.timer.countDown();
+      this.timerView.render();
     } else {
       this.endRound();
     }
   }
   endRound() {
-    this.roundView.clearGameTargets();
+    clearInterval(this.tick);
   }
 }
