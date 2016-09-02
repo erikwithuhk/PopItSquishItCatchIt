@@ -3,5 +3,5 @@ window.addEventListener('resize', () => {
   document.querySelector('#timer').style.zIndex = '0';
 });
 
-const game = new Game(10);
+const game = new Game(100);
 game.startRound();

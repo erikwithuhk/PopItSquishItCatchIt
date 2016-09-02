@@ -9,14 +9,18 @@ class Round {
     this.gameTargets.push(gameTarget);
   }
   getScore() {
-    const pointsFromAllGameTargets = this.gameTargets.map((gameTarget) => {
-      return gameTarget.getPointValue();
-    });
-    const totalPoints = pointsFromAllGameTargets.reduce((curr, prev) => {
-      return curr + prev;
-    });
-    this.score = totalPoints;
-    return this.score;
+    if (this.gameTargets.length === 0) {
+      return this.score;
+    } else {
+      const pointsFromAllGameTargets = this.gameTargets.map((gameTarget) => {
+        return gameTarget.getPointValue();
+      });
+      const totalPoints = pointsFromAllGameTargets.reduce((curr, prev) => {
+        return curr + prev;
+      });
+      this.score = totalPoints;
+      return this.score;
+    }
   }
   endRound() {
     this.roundOver = true;

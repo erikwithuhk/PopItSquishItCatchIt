@@ -4,6 +4,7 @@ class Game {
     this.timer = null;
     this.timerView = null;
     this.round = null;
+    this.scoreView = null;
     this.roundView = null;
     this.tick = null;
   }
@@ -11,7 +12,8 @@ class Game {
     this.timer = new Timer(this.roundLength);
     this.timerView = new TimerView(this.timer);
     this.round = new Round()
-    this.roundView = new RoundView(this.round, this.timerView);
+    this.scoreView = new ScoreView(this.round);
+    this.roundView = new RoundView(this.round, this.timerView, this.scoreView);
     this.roundView.render();
     this.tick = setInterval(() => { this.checkStatus(); }, 1000);
   }
