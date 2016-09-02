@@ -8,15 +8,27 @@ body {
   overflow: hidden;
 }
 
+div#timer {
+  color: #fff;
+  font-family: 'Anonymous Pro', monospace;
+  font-size: 50vmin;
+  line-height: 100vh;
+  height: 100%;
+  text-align: center;
+  width: 100%;
+  z-index: 0;
+}
+
 div.circle {
   animation-name: crosscreen;
   animation-duration: 30s;
   animation-timing-function: linear;
-  background-color: white;
+  background-color: #4E9FB5;
   border-radius: 50%;
   position: absolute;
   transition-property: all;
   transition-timing-function: ease-in-out;
+  z-index: 1;
 }
 
 @keyframes crosscreen {

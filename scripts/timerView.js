@@ -8,6 +8,13 @@ class TimerView {
     boardNode.appendChild(this.el);
   }
   render() {
-    this.el.innerHTML = this.timer.getCurrentTime();
+    const timeRemaining = this.timer.getCurrentTime();
+    let leadingZero;
+    if (timeRemaining < 10) {
+      leadingZero = `0${timeRemaining}`;
+    } else {
+      leadingZero = timeRemaining;
+    }
+    this.el.innerHTML = `00:${leadingZero}`;
   }
 }

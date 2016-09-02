@@ -1,7 +1,4 @@
-// let id = 1;
-// window.setInterval(() => {
-//   const gameTargetViewTest = new GameTargetView(id);
-//   gameTargetViewTest.render();
-//   document.body.appendChild(gameTargetViewTest.el)
-//   id += 1;
-// }, 500);
+// Resizes font-size for viewport
+window.addEventListener('resize', () => {
+    document.querySelector('#timer').style.zIndex = '0';
+});
