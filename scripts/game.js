@@ -26,6 +26,7 @@ class Game {
     if (!this.timer.over()) {
       this.timer.countDown();
       this.timerView.render();
+      // this.scoreView.render();
     } else {
       this.endRound();
     }

@@ -16,7 +16,7 @@ class TimerView {
     } else {
       this.el.setAttribute('class', `${this.class}`);
     }
-    this.el.innerHTML = '';
+    this.el.innerHTML = '&nbsp;';
     setTimeout(() => {
       this.el.innerHTML = timeRemaining;
     }, 200);

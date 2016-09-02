@@ -1,22 +1,31 @@
+html,
+body,
+main,
+div.board {
+  height: 100%;
+  width: 100%;
+}
+
 body {
   /* Photo credit Krystian Tambur https://unsplash.com/@atlasior */
   background: url('../images/underwater.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   background-size: cover;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
 }
 
-.timer {
+div.timer,
+div.current-score {
   color: #fff;
-  font-family: 'Anonymous Pro', monospace;
-  font-size: 50vmin;
-  letter-spacing: -0.02em;
-  line-height: 100vh;
-  height: 100%;
+  font-family: 'Changa One', cursive;
   opacity: 0.75;
   text-align: center;
+}
+
+div.timer {
+  font-size: 50vmin;
+  letter-spacing: -0.02em;
+  padding-top: 33vh;
+  line-height: 33vh;
   -webkit-transition: background-color 1s ease-in-out;
   -o-transition: background-color 1s ease-in-out;
   transition: background-color 1s ease-in-out;
@@ -24,12 +33,20 @@ body {
   z-index: 0;
 }
 
-.final-seconds-timer {
+div.final-seconds-timer {
   color: red;
 }
 
-.time-up-timer {
+div.time-up-timer {
   background-color: rgba(0, 0, 0, 0.5);
+  z-index: 2;
+}
+
+div.current-score {
+  font-size: 10vmin;
+  line-height: 33vh;
+  text-align: center;
+  z-index: 0;
 }
 
 div.circle {
