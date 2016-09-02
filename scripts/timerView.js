@@ -15,6 +15,9 @@ class TimerView {
     } else {
       leadingZero = timeRemaining;
     }
+    if (timeRemaining <= 5) {
+      this.el.style.color = 'red';
+    }
     this.el.innerHTML = `00:${leadingZero}`;
   }
 }
