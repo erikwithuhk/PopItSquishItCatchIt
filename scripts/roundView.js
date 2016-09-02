@@ -15,6 +15,10 @@ class RoundView {
   }
   clearGameTargets() {
     clearInterval(this.generationInterval);
+    const targetNodes = document.querySelectorAll('.circle');
+    targetNodes.forEach((target) => {
+      document.querySelector('#board').removeChild(target);
+    });
   }
   render() {
     this.el.setAttribute('id', 'board');

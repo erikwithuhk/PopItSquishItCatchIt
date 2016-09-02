@@ -70,14 +70,17 @@ class GameTargetView {
     this.transition = (Math.random() * 2) + 1;
     this.el.style.transition = `all ${this.transition}s`;
   }
+  changeSize() {
+    setTimeout(() => {
+      this.render();
+    }, 2500);
+  }
   render() {
     this.setDiameter();
     this.setOpacity();
     this.setTopValue();
     this.setTransition();
     this.setClickListener();
-    setTimeout(() => {
-      this.render();
-    }, 2500);
+    this.changeSize();
   }
 }

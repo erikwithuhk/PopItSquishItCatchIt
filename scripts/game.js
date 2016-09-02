@@ -21,5 +21,6 @@ class Game {
   }
   endRound() {
     clearInterval(this.tick);
+    this.roundView.clearGameTargets();
   }
 }
