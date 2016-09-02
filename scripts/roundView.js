@@ -4,7 +4,7 @@ class RoundView {
     this.timerView = timerView || new TimerView();
     this.targetId = 1;
     this.el = document.createElement('div');
-    this.generationInterval = setInterval(() => { this.generateGameTarget() }, 500);
+    this.generationInterval = setInterval(() => { this.generateGameTarget(); }, 500);
   }
   generateGameTarget() {
     const gameTargetView = new GameTargetView(this.targetId);

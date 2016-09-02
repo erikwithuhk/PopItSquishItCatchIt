@@ -5,17 +5,16 @@ class Game {
     this.timerView = new TimerView(this.timer);
     this.round = new Round();
     this.roundView = new RoundView(this.round, this.timerView);
-    this.tick = setInterval(() => { this.checkStatus() }, 1000);
+    this.tick = setInterval(() => { this.checkStatus(); }, 1000);
   }
   startRound() {
       this.roundView.render();
       this.checkStatus();
   }
   checkStatus() {
-    console.log('tick');
-    if (!this.round.over()) {
-      this.timer.countDown();
+    if (!this.timer.over()) {
       this.timerView.render();
+      this.timer.countDown();
     } else {
       this.endRound();
     }

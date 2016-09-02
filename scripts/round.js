@@ -17,9 +17,6 @@ class Round {
     });
     return totalPoints;
   }
-  over() {
-    return this.roundOver;
-  }
   endRound() {
     this.roundOver = true;
   }
