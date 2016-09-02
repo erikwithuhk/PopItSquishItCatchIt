@@ -17,6 +17,9 @@ body {
   height: 100%;
   opacity: 0.75;
   text-align: center;
+  -webkit-transition: background-color 1s ease-in-out;
+  -o-transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
   width: 100%;
   z-index: 0;
 }

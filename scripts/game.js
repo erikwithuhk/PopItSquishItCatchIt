@@ -16,9 +16,9 @@ class Game {
     this.tick = setInterval(() => { this.checkStatus(); }, 1000);
   }
   endRound() {
+    this.roundView.clearGameTargets();
     clearInterval(this.tick);
     this.round.endRound();
-    this.roundView.clearGameTargets();
   }
   checkStatus() {
     if (!this.timer.over()) {
