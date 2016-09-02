@@ -22,7 +22,7 @@ class RoundView {
     this.el.setAttribute('id', 'board');
     this.timerView.render();
     this.timerView.appendToBoard(this.el);
-    document.body.appendChild(this.el);
+    document.querySelector('main').appendChild(this.el);
     this.generateGameTargets();
   }
 }

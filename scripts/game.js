@@ -12,8 +12,9 @@ class Game {
           this.timerView.render();
       }, 1000);
     // }
+    // this.endRound();
   }
-  roundOver() {
+  endRound() {
     this.roundView.clearGameTargets();
   }
 }
