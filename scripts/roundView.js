@@ -1,8 +1,8 @@
 class RoundView {
-  constructor() {
+  constructor(timerView) {
     this.round = new Round();
+    this.timerView = timerView || new TimerView();
     this.el = document.createElement('div');
-    this.render();
   }
   generateGameTargets() {
     let id = 1;
@@ -15,11 +15,19 @@ class RoundView {
       id += 1;
     }, 500);
   }
+  clearGameTargets() {
+    this.el.innerHTML = 'Game over';
+  }
   render() {
     this.el.setAttribute('id', 'board');
-    document.body.querySelector('#container').appendChild(this.el);
+    this.timerView.render();
+    this.timerView.appendToBoard(this.el);
+    document.body.appendChild(this.el);
+    this.generateGameTargets();
   }
 }
-
-const test = new RoundView();
-test.generateGameTargets();
+//
+// const test = new RoundView();
+// test.render();
+// test.generateGameTargets();
+// test.round.tick();
