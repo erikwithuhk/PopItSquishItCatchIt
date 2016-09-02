@@ -7,7 +7,7 @@ class Timer {
     return this.timeUp;
   }
   countDown() {
-    if (this.timeRemaining > 0) {
+    if (this.timeRemaining > 1) {
       this.timeRemaining -= 1;
     } else {
       this.timeRemaining = 0;

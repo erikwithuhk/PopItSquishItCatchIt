@@ -22,8 +22,8 @@ class Game {
   }
   checkStatus() {
     if (!this.timer.over()) {
-      this.timerView.render();
       this.timer.countDown();
+      this.timerView.render();
     } else {
       this.endRound();
     }

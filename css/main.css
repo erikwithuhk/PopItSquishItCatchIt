@@ -8,16 +8,21 @@ body {
   overflow: hidden;
 }
 
-div#timer {
+.timer {
   color: #fff;
   font-family: 'Anonymous Pro', monospace;
   font-size: 50vmin;
   letter-spacing: -0.02em;
   line-height: 100vh;
   height: 100%;
+  opacity: 0.75;
   text-align: center;
   width: 100%;
   z-index: 0;
+}
+
+.final-seconds-timer {
+  color: red;
 }
 
 div.circle {

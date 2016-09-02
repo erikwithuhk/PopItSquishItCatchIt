@@ -2,7 +2,7 @@ class TimerView {
   constructor(timer) {
     this.timer = timer || new Timer(30);
     this.el = document.createElement('div');
-    this.el.setAttribute('id', 'timer');
+    this.el.setAttribute('class', 'timer');
   }
   appendToBoard(boardNode) {
     boardNode.appendChild(this.el);
@@ -10,14 +10,12 @@ class TimerView {
   render() {
     const timeRemaining = this.timer.getCurrentTime();
     let leadingZero;
-    if (timeRemaining < 10) {
-      leadingZero = `0${timeRemaining}`;
-    } else {
-      leadingZero = timeRemaining;
-    }
     if (timeRemaining <= 5) {
-      this.el.style.color = 'red';
+      this.el.setAttribute('class', `${this.el.getAttribute('class')} final-seconds-timer`);
     }
-    this.el.innerHTML = `00:${leadingZero}`;
+    this.el.innerHTML = ''
+    setTimeout(() => {
+      this.el.innerHTML = timeRemaining;
+    }, 200);
   }
 }
