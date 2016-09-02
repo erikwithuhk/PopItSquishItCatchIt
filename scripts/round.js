@@ -15,9 +15,11 @@ class Round {
     const totalPoints = pointsFromAllGameTargets.reduce((curr, prev) => {
       return curr + prev;
     });
-    return totalPoints;
+    this.score = totalPoints;
+    return this.score;
   }
   endRound() {
     this.roundOver = true;
+    this.getScore();
   }
 }
