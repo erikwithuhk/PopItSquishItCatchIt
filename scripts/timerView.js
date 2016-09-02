@@ -9,7 +9,6 @@ class TimerView {
   }
   render() {
     const timeRemaining = this.timer.getCurrentTime();
-    let leadingZero;
     if (timeRemaining === 'Time up!') {
       this.el.setAttribute('class', `${this.class} time-up-timer`);
     } else if (timeRemaining <= 5) {
@@ -17,7 +16,7 @@ class TimerView {
     } else {
       this.el.setAttribute('class', `${this.class}`);
     }
-    this.el.innerHTML = ''
+    this.el.innerHTML = '';
     setTimeout(() => {
       this.el.innerHTML = timeRemaining;
     }, 200);
