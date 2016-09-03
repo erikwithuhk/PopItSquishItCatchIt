@@ -3,5 +3,7 @@ window.addEventListener('resize', () => {
   document.querySelector('.timer').style.zIndex = '0';
 });
 
-const game = new Game(5);
+alert('This is working');
+
+const game = new Game(30);
 game.startRound();
