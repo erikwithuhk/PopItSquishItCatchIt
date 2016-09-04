@@ -12,12 +12,12 @@ class Round {
     if (this.gameTargets.length === 0) {
       return this.score;
     }
-    const pointsFromAllGameTargets = this.gameTargets.map((gameTarget) => {
-      return gameTarget.getPointValue();
-    });
-    const totalPoints = pointsFromAllGameTargets.reduce((curr, prev) => {
-      return curr + prev;
-    });
+    const pointsFromAllGameTargets = this.gameTargets.map((gameTarget) =>
+      gameTarget.getPointValue()
+    );
+    const totalPoints = pointsFromAllGameTargets.reduce((curr, prev) =>
+      curr + prev
+    );
     this.score = totalPoints;
     return this.score;
   }

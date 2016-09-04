@@ -19,8 +19,7 @@ class Timer {
   getCurrentTime() {
     if (this.timeRemaining > 0) {
       return this.timeRemaining;
-    } else {
-      return 'Time up!';
     }
+    return 'Time up!';
   }
 }
