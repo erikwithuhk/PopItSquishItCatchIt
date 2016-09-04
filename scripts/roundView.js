@@ -59,7 +59,7 @@ class RoundView {
   }
   endRound() {
     this.el.style.opacity = 1;
-    this.el.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    this.el.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
     this.clearGameTargets();
   }
   render() {
