@@ -15,20 +15,9 @@ body {
 }
 
 div.board {
-  -webkit-transition: background-color 1s ease-in-out;
-  -o-transition: background-color 1s ease-in-out;
-  transition: background-color 1s ease-in-out;
-}
-
-div.white-overlay {
-  /*color: rgba(0, 0, 0, 0.5);*/
-  background-color: rgba(255, 255, 255, 0.5);
-  /*transition: all 0.2s ease-in-out;*/
-}
-
-div.gray-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  /*transition: all 0.2s ease-in-out;*/
+  -webkit-transition: background-color 0.3s ease-in-out;
+  -o-transition: background-color 0.3s ease-in-out;
+  transition: background-color 0.3s ease-in-out;
 }
 
 div.start,

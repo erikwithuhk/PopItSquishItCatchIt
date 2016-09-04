@@ -70,7 +70,8 @@ boardClassWords.join(' ');
   }
   startRound(){
     this.el.setAttribute('class', 'board');
-    this.el.setAttribute('class', `${this.el.getAttribute('class')} white-overlay`);
+    this.el.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+    // this.el.setAttribute('class', `${this.el.getAttribute('class')} white-overlay`);
     this.startEl.setAttribute('class', 'start');
     this.startEl.innerHTML = 'Start!';
     this.el.appendChild(this.startEl);
@@ -78,8 +79,9 @@ boardClassWords.join(' ');
   }
   endRound() {
     this.el.style.opacity = 1;
-    removeClass(this.el, 'white-overlay');
-    this.el.setAttribute('class', `${this.el.getAttribute('class')} gray-overlay`);
+    // this.removeClass(this.el, 'white-overlay');
+    this.el.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+    // this.el.setAttribute('class', `${this.el.getAttribute('class')} gray-overlay`);
     this.clearGameTargets();
   }
   render() {
