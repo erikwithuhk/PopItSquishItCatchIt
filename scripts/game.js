@@ -8,6 +8,22 @@ class Game {
     this.roundView = null;
     this.tick = null;
   }
+  setStartClickListener(targetNode) {
+    targetNode.addEventListener('click', () => {
+      document.querySelector('main').innerHTML = '';
+      this.startRound();
+    });
+  }
+  startGame() {
+    const startScreen = document.createElement('div');
+    startScreen.setAttribute('class', 'opening-screen');
+    startScreen.innerHTML = `
+      <h1>Welcome to [GAME NAME]!</h1>
+      <button>Play</button>
+      `;
+    this.setStartClickListener(startScreen.querySelector('button'));
+    document.querySelector('main').appendChild(startScreen);
+  }
   startRound() {
     this.timer = new Timer(this.roundLength);
     this.timerView = new TimerView(this.timer);
@@ -23,7 +39,10 @@ class Game {
   endRound() {
     this.scoreView.removeScoreView();
     this.timerView.render();
-    this.roundView.endRound();
+    const playAgainButton = document.createElement('button');
+    playAgainButton.innerHTML = 'Play again!';
+    this.setStartClickListener(playAgainButton);
+    this.roundView.endRound(playAgainButton);
     this.round.endRound();
     clearInterval(this.tick);
   }

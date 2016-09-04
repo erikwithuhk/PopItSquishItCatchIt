@@ -5,4 +5,4 @@ window.addEventListener('resize', () => {
 });
 
 const game = new Game(5);
-game.startRound();
+game.startGame();

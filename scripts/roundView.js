@@ -60,10 +60,11 @@ class RoundView {
     this.el.appendChild(this.overlayEl);
     this.parentNode.appendChild(this.el);
   }
-  endRound() {
+  endRound(playAgainButton) {
     this.el.innerHTML = '';
     this.overlayEl.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
     this.timerView.appendToNode(this.overlayEl);
+    this.overlayEl.appendChild(playAgainButton);
     this.el.appendChild(this.overlayEl);
     this.clearGameTargets();
   }
