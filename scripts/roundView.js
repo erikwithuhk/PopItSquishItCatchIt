@@ -5,9 +5,10 @@ class RoundView {
     this.scoreView = scoreView || new ScoreView();
     this.targetId = 1;
     this.el = document.createElement('div');
-    this.generationInterval = setInterval(() => { this.generateGameTarget(); }, 500);
+    this.parentNode = document.querySelector('main');
+    this.generationInterval = setInterval(() => { this.generateGameTargets(); }, 500);
   }
-  generateGameTarget() {
+  generateGameTargets() {
     const gameTargetView = new GameTargetView(this.targetId);
     this.round.addGameTarget(gameTargetView.gameTarget);
     gameTargetView.render();
@@ -37,16 +38,22 @@ class RoundView {
     });
   }
   endRound() {
+    this.el.setAttribute('class', `${this.el.getAttribute('class')} gray-overlay`);
     this.clearGameTargets();
-    this.el.setAttribute('class', `${this.el.getAttribute('class')} round-over`);
   }
+  // initialRender() {
+  //   this.el.setAttribute('class', 'board');
+  //   this.parentNode.appendChild(this.el);
+  // }
   render() {
     this.el.setAttribute('class', 'board');
-    this.timerView.render();
-    this.timerView.appendToBoard(this.el);
-    this.scoreView.render();
-    this.scoreView.appendToBoard(this.el);
-    document.querySelector('main').appendChild(this.el);
-    this.generateGameTarget();
+    const initialRender = setTimeout(() => {
+      this.timerView.render();
+      this.timerView.appendToBoard(this.el);
+      this.scoreView.render();
+      this.scoreView.appendToBoard(this.el);
+      this.parentNode.appendChild(this.el);
+      this.generateGameTargets();
+    }, 1000);
   }
 }

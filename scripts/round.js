@@ -23,6 +23,5 @@ class Round {
   }
   endRound() {
     this.roundOver = true;
-    this.getScore();
   }
 }

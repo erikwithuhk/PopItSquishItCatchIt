@@ -14,8 +14,9 @@ body {
   overflow: hidden;
 }
 
-div.round-over {
+div.gray-overlay {
   background-color: rgba(0, 0, 0, 0.5);
+  transition: all 0.2s ease-in-out;
 }
 
 div.timer,

@@ -18,14 +18,15 @@ class Game {
     this.tick = setInterval(() => { this.checkStatus(); }, 1000);
   }
   endRound() {
+    this.timerView.render();
     this.roundView.endRound();
-    clearInterval(this.tick);
     this.round.endRound();
+    clearInterval(this.tick);
   }
   checkStatus() {
     if (!this.timer.over()) {
-      this.timer.countDown();
       this.timerView.render();
+      this.timer.countDown();
     } else {
       this.endRound();
     }

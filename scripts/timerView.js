@@ -9,16 +9,11 @@ class TimerView {
   }
   render() {
     const timeRemaining = this.timer.getCurrentTime();
-    if (timeRemaining === 'Time up!') {
-      this.el.setAttribute('class', `${this.class} time-up-timer`);
-    } else if (timeRemaining <= 5) {
+    if (timeRemaining <= 5) {
       this.el.setAttribute('class', `${this.class} final-seconds-timer`);
     } else {
       this.el.setAttribute('class', `${this.class}`);
     }
-    this.el.innerHTML = '&nbsp;';
-    setTimeout(() => {
-      this.el.innerHTML = timeRemaining;
-    }, 200);
+    this.el.innerHTML = timeRemaining;
   }
 }
