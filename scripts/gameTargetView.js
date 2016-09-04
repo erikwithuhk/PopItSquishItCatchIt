@@ -68,7 +68,6 @@ class GameTargetView {
     this.setOpacity();
     this.setTopValue();
     this.setTransition();
-    // this.setClickListener();
     this.changeSize();
   }
 }
