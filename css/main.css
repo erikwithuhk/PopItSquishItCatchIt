@@ -14,11 +14,24 @@ body {
   overflow: hidden;
 }
 
-div.gray-overlay {
-  background-color: rgba(0, 0, 0, 0.5);
-  transition: all 0.2s ease-in-out;
+div.board {
+  -webkit-transition: background-color 1s ease-in-out;
+  -o-transition: background-color 1s ease-in-out;
+  transition: background-color 1s ease-in-out;
 }
 
+div.white-overlay {
+  /*color: rgba(0, 0, 0, 0.5);*/
+  background-color: rgba(255, 255, 255, 0.5);
+  /*transition: all 0.2s ease-in-out;*/
+}
+
+div.gray-overlay {
+  background-color: rgba(0, 0, 0, 0.5);
+  /*transition: all 0.2s ease-in-out;*/
+}
+
+div.start,
 div.timer,
 div.current-score {
   color: #fff;
@@ -26,6 +39,14 @@ div.current-score {
   opacity: 0.75;
   text-align: center;
 }
+
+div.start {
+  color: #4e9fb5;
+  font-size: 33vmin;
+  line-height: 100vh;
+  transition: opacity 0.25s, font 0.3s;
+}
+
 
 div.timer {
   font-size: 33vmin;
@@ -54,7 +75,7 @@ div.circle {
   animation-name: crosscreen;
   animation-duration: 30s;
   animation-timing-function: linear;
-  background-color: #4E9FB5;
+  background-color: #4e9fb5;
   border-radius: 50%;
   position: absolute;
   transition-property: all;

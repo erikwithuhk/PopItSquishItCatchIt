@@ -5,16 +5,19 @@ class RoundView {
     this.scoreView = scoreView || new ScoreView();
     this.targetId = 1;
     this.el = document.createElement('div');
+    this.startEl = document.createElement('div');
     this.parentNode = document.querySelector('main');
-    this.generationInterval = setInterval(() => { this.generateGameTargets(); }, 500);
+    this.generationInterval = null;
   }
   generateGameTargets() {
-    const gameTargetView = new GameTargetView(this.targetId);
-    this.round.addGameTarget(gameTargetView.gameTarget);
-    gameTargetView.render();
-    this.setClickListener(gameTargetView);
-    this.el.appendChild(gameTargetView.el);
-    this.targetId += 1;
+    // setTimeout(() => {
+      const gameTargetView = new GameTargetView(this.targetId);
+      this.round.addGameTarget(gameTargetView.gameTarget);
+      gameTargetView.render();
+      this.setClickListener(gameTargetView);
+      this.el.appendChild(gameTargetView.el);
+      this.targetId += 1;
+    // }, 2000);
   }
   setClickListener(gameTargetView) {
     const gameTargetNode = gameTargetView.el;
@@ -37,23 +40,60 @@ class RoundView {
       document.querySelector('.board').removeChild(target);
     });
   }
+  removeFinalClass() {
+let boardClass = board.getAttribute('class')
+boardClass
+boardClass.slice(0, -1);
+boardClass.split();
+["board gray-overlay gray-overlay"]
+let boardClassWords = boardClass.split(' ');
+undefined
+boardClassWords
+["board", "gray-overlay", "gray-overlay"]
+boardClassWords.pop()
+"gray-overlay"
+boardClassWords
+["board", "gray-overlay"]
+boardClassWords.join(' ');
+"board gray-overlay"
+  }
+  removeClass(node, classToRemove) {
+    const classes = node.getAttribute('class');
+    const classesArray = classes.split(' ');
+    classesArray.forEach((classToCompare, i) => {
+      if (classToRemove === classToCompare) {
+        classesArray.splice(i, 1);
+      }
+    });
+    const updatedClass = classesArray.join(' ');
+    this.el.setAttribute('class', updatedClass);
+  }
+  startRound(){
+    this.el.setAttribute('class', 'board');
+    this.el.setAttribute('class', `${this.el.getAttribute('class')} white-overlay`);
+    this.startEl.setAttribute('class', 'start');
+    this.startEl.innerHTML = 'Start!';
+    this.el.appendChild(this.startEl);
+    this.parentNode.appendChild(this.el);
+  }
   endRound() {
+    this.el.style.opacity = 1;
+    removeClass(this.el, 'white-overlay');
     this.el.setAttribute('class', `${this.el.getAttribute('class')} gray-overlay`);
     this.clearGameTargets();
   }
-  // initialRender() {
-  //   this.el.setAttribute('class', 'board');
-  //   this.parentNode.appendChild(this.el);
-  // }
   render() {
-    this.el.setAttribute('class', 'board');
-    const initialRender = setTimeout(() => {
-      this.timerView.render();
-      this.timerView.appendToBoard(this.el);
-      this.scoreView.render();
-      this.scoreView.appendToBoard(this.el);
-      this.parentNode.appendChild(this.el);
-      this.generateGameTargets();
+    this.startEl.style.opacity = '0';
+    this.startEl.style.fontSize = '125vh';
+    setTimeout(() => {
+      this.el.removeChild(this.startEl);
     }, 1000);
+    this.el.style.backgroundColor = 'rgba(255, 255, 255, 0)';
+    this.timerView.render();
+    this.timerView.appendToBoard(this.el);
+    this.scoreView.render();
+    this.scoreView.appendToBoard(this.el);
+    this.parentNode.appendChild(this.el);
+    this.generationInterval = setInterval(() => { this.generateGameTargets(); }, 500)
   }
 }
