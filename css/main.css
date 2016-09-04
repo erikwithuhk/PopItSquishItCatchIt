@@ -34,8 +34,12 @@ div.start {
   font-size: 33vmin;
   line-height: 100vh;
   transition: opacity 0.25s, font 0.3s;
+  background: url('../images/underwater.jpg') no-repeat center center fixed;
+  -webkit-background-size: cover;
+  background-size: cover;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
-
 
 div.timer {
   font-size: 33vmin;

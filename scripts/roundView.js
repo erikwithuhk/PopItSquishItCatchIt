@@ -70,7 +70,7 @@ boardClassWords.join(' ');
   }
   startRound(){
     this.el.setAttribute('class', 'board');
-    this.el.style.backgroundColor = 'rgba(255, 255, 255, 0.5)';
+    this.el.style.backgroundColor = 'rgba(255, 255, 255, 0.85)';
     // this.el.setAttribute('class', `${this.el.getAttribute('class')} white-overlay`);
     this.startEl.setAttribute('class', 'start');
     this.startEl.innerHTML = 'Start!';
