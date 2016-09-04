@@ -4,7 +4,7 @@ class TimerView {
     this.el = document.createElement('div');
     this.class = 'timer';
   }
-  appendToBoard(boardNode) {
+  appendToNode(boardNode) {
     boardNode.appendChild(this.el);
   }
   render() {

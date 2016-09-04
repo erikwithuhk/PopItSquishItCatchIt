@@ -5,6 +5,7 @@ class RoundView {
     this.scoreView = scoreView || new ScoreView();
     this.targetId = 1;
     this.el = document.createElement('div');
+    this.overlayEl = document.createElement('div');
     this.startEl = document.createElement('div');
     this.parentNode = document.querySelector('main');
     this.generationInterval = null;
@@ -51,28 +52,33 @@ class RoundView {
   }
   startRound() {
     this.el.setAttribute('class', 'board');
-    this.el.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
+    this.overlayEl.setAttribute('class', 'overlay');
+    this.overlayEl.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
     this.startEl.setAttribute('class', 'start');
     this.startEl.innerHTML = 'Start!';
-    this.el.appendChild(this.startEl);
+    this.overlayEl.appendChild(this.startEl);
+    this.el.appendChild(this.overlayEl);
     this.parentNode.appendChild(this.el);
   }
   endRound() {
-    this.el.style.opacity = 1;
-    this.el.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+    this.el.innerHTML = '';
+    this.overlayEl.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
+    this.timerView.appendToNode(this.overlayEl);
+    this.el.appendChild(this.overlayEl);
     this.clearGameTargets();
   }
   render() {
+    this.overlayEl.style.backgroundColor = 'rgba(255, 255, 255, 0)';
     this.startEl.style.opacity = '0';
     this.startEl.style.fontSize = '125vh';
     setTimeout(() => {
-      this.el.removeChild(this.startEl);
+      this.overlayEl.removeChild(this.startEl);
+      this.el.removeChild(this.overlayEl);
     }, 1000);
-    this.el.style.backgroundColor = 'rgba(255, 255, 255, 0)';
     this.timerView.render();
-    this.timerView.appendToBoard(this.el);
+    this.timerView.appendToNode(this.el);
     this.scoreView.render();
-    this.scoreView.appendToBoard(this.el);
+    this.scoreView.appendToNode(this.el);
     this.parentNode.appendChild(this.el);
     this.generationInterval = setInterval(() => { this.generateGameTargets(); }, 500);
   }

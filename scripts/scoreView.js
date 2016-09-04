@@ -7,7 +7,7 @@ class ScoreView {
   render() {
     this.el.innerHTML = `Current score: ${this.round.getScore()}`;
   }
-  appendToBoard(boardNode) {
+  appendToNode(boardNode) {
     boardNode.appendChild(this.el);
   }
   removeScoreView() {
