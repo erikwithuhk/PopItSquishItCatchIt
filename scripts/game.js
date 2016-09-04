@@ -21,6 +21,7 @@ class Game {
     }, 2000);
   }
   endRound() {
+    this.scoreView.removeScoreView();
     this.timerView.render();
     this.roundView.endRound();
     this.round.endRound();

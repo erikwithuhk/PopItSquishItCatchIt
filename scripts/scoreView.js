@@ -10,4 +10,7 @@ class ScoreView {
   appendToBoard(boardNode) {
     boardNode.appendChild(this.el);
   }
+  removeScoreView() {
+    this.el.innerHTML = ' ';
+  }
 }
