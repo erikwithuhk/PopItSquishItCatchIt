@@ -11,6 +11,7 @@ body {
   background: url('../images/underwater.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   background-size: cover;
+  overflow: hidden;
 }
 
 div.round-over {
