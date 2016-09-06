@@ -4,5 +4,5 @@ window.addEventListener('resize', () => {
   document.querySelector('.current-score').style.zIndex = '0';
 });
 
-const game = new Game(5);
+const game = new Game(30);
 game.startGame();
