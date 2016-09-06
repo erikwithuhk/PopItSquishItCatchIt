@@ -19,8 +19,10 @@ class Game {
     const startScreen = document.createElement('div');
     startScreen.setAttribute('class', 'opening-screen');
     startScreen.innerHTML = `
-      <h1>Welcome to [GAME NAME]!</h1>
-      <button>Play</button>
+      <div class="overlay">
+      <h1>Welcome to Pop the Bubbles!</h1>
+      <button>Start popping</button>
+      </div>
       `;
     this.setStartClickListener(startScreen.querySelector('button'));
     document.querySelector('main').appendChild(startScreen);

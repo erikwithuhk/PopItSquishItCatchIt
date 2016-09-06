@@ -13,8 +13,8 @@ div.overlay {
 }
 
 div.opening-screen {
-  background: #000;
-  padding: 25vh 5vw;
+  /*background-color: rgba(255, 255, 255, 0.9);*/
+  /*padding: 25vh 5vw;*/
   text-align: center;
 }
 
@@ -22,17 +22,19 @@ div.opening-screen h1 {
   color: #fff;
   font-size: 10vmin;
   font-weight: normal;
-  margin: 10vmin;
+  margin: 0;
 }
 
 div.opening-screen button {
+  border: 3px solid #4e9fb5;
   font-size: 5vmin;
   padding: 1.5vmin 3vmin;
 }
 
+div.opening-screen,
 div.board {
   /* Photo credit Krystian Tambur https://unsplash.com/@atlasior */
-  /*background: url('../images/underwater.jpg');*/
+  background: url('../images/underwater.jpg');
   background-attachment: fixed;
   background-position: center center;
   background-repeat: no-repeat;
@@ -42,6 +44,7 @@ div.board {
 }
 
 div.overlay {
+  background-color: rgba(255, 255, 255, 0.9);
   -webkit-transition: background-color 0.3s ease-in-out;
   -o-transition: background-color 0.3s ease-in-out;
   transition: background-color 0.3s ease-in-out;
@@ -55,16 +58,26 @@ div.current-score {
   text-align: center;
 }
 
+div.opening-screen h1 {
+  padding-top: 40vmin;
+  padding-bottom: 2rem;
+}
+
+div.opening-screen h1,
+div.opening-screen button,
 div.start {
   color: #4e9fb5;
-  font-size: 33vmin;
-  line-height: 100vh;
   transition: opacity 0.25s, font 0.3s;
   background: url('../images/underwater.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
   background-size: cover;
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+div.start {
+  font-size: 33vmin;
+  line-height: 100vh;
 }
 
 div.timer {
