@@ -4,5 +4,7 @@ window.addEventListener('resize', () => {
   document.querySelector('.current-score').style.zIndex = '0';
 });
 
-const game = new Game(30);
+const bubblesTheme = new BubblesTheme();
+
+const game = new Game(bubblesTheme, 30);
 game.startGame();

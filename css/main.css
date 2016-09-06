@@ -32,7 +32,10 @@ div.opening-screen button {
 
 div.board {
   /* Photo credit Krystian Tambur https://unsplash.com/@atlasior */
-  background: url('../images/underwater.jpg') no-repeat center center fixed;
+  /*background: url('../images/underwater.jpg');*/
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
   -webkit-background-size: cover;
   background-size: cover;
   overflow: hidden;

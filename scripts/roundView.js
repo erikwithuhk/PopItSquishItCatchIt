@@ -1,5 +1,6 @@
 class RoundView {
-  constructor(round, timerView, scoreView) {
+  constructor(theme, round, timerView, scoreView) {
+    this.theme = theme;
     this.round = round || new Round();
     this.timerView = timerView || new TimerView();
     this.scoreView = scoreView || new ScoreView();
@@ -52,6 +53,7 @@ class RoundView {
   }
   startRound() {
     this.el.setAttribute('class', 'board');
+    this.theme.setBackgroundImage(this.el);
     this.overlayEl.setAttribute('class', 'overlay');
     this.overlayEl.style.backgroundColor = 'rgba(255, 255, 255, 0.9)';
     this.startEl.setAttribute('class', 'start');

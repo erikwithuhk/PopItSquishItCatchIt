@@ -1,5 +1,6 @@
 class Game {
-  constructor(roundLength) {
+  constructor(theme, roundLength) {
+    this.theme = theme;
     this.roundLength = roundLength || 30;
     this.timer = null;
     this.timerView = null;
@@ -11,7 +12,7 @@ class Game {
   setStartClickListener(targetNode) {
     targetNode.addEventListener('click', () => {
       document.querySelector('main').innerHTML = '';
-      this.startRound();
+      this.startRound(this.theme);
     });
   }
   startGame() {
@@ -24,12 +25,13 @@ class Game {
     this.setStartClickListener(startScreen.querySelector('button'));
     document.querySelector('main').appendChild(startScreen);
   }
-  startRound() {
+  startRound(theme) {
+    this.round = new Round();
+    this.theme = theme;
     this.timer = new Timer(this.roundLength);
     this.timerView = new TimerView(this.timer);
-    this.round = new Round();
     this.scoreView = new ScoreView(this.round);
-    this.roundView = new RoundView(this.round, this.timerView, this.scoreView);
+    this.roundView = new RoundView(this.theme, this.round, this.timerView, this.scoreView);
     this.roundView.startRound();
     setTimeout(() => {
       this.roundView.render();
