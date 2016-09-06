@@ -12,7 +12,8 @@ div.overlay {
   height: 100%;
 }
 
-div.opening-screen {
+div.opening-screen,
+div.overlay {
   /*background-color: rgba(255, 255, 255, 0.9);*/
   /*padding: 25vh 5vw;*/
   text-align: center;
@@ -25,10 +26,20 @@ div.opening-screen h1 {
   margin: 0;
 }
 
+div.overlay button {
+  background-color: #fff;
+  color: #51c5ea;
+  border: 3px solid #fff;
+}
+
+div.overlay button,
 div.opening-screen button {
-  border: 3px solid #4e9fb5;
   font-size: 5vmin;
   padding: 1.5vmin 3vmin;
+}
+
+div.opening-screen button {
+  border: 3px solid #51c5ea;
 }
 
 div.opening-screen,
@@ -58,7 +69,8 @@ div.current-score {
   text-align: center;
 }
 
-div.opening-screen h1 {
+div.opening-screen h1,
+div.final-score {
   padding-top: 40vmin;
   padding-bottom: 2rem;
 }
@@ -66,7 +78,7 @@ div.opening-screen h1 {
 div.opening-screen h1,
 div.opening-screen button,
 div.start {
-  color: #4e9fb5;
+  color: #51c5ea;
   transition: opacity 0.25s, font 0.3s;
   background: url('../images/underwater.jpg') no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -103,11 +115,16 @@ div.current-score {
   z-index: 0;
 }
 
+div.final-score {
+  color: #fff;
+  font-size: 10vmin;
+}
+
 div.circle {
   animation-name: crosscreen;
   animation-duration: 30s;
   animation-timing-function: linear;
-  background-color: #4e9fb5;
+  background-color: #51c5ea;
   border-radius: 50%;
   position: absolute;
   transition-property: all;

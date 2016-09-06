@@ -13,4 +13,9 @@ class ScoreView {
   removeScoreView() {
     this.el.innerHTML = ' ';
   }
+  displayFinal() {
+    this.el.setAttribute('class', 'final-score');
+    this.el.innerHTML = `Final score: ${this.round.getScore()}`;
+    return this.el;
+  }
 }

@@ -66,9 +66,13 @@ class RoundView {
     this.el.innerHTML = '';
     this.overlayEl.style.backgroundColor = 'rgba(0, 0, 0, 0.75)';
     this.timerView.appendToNode(this.overlayEl);
-    this.overlayEl.appendChild(playAgainButton);
     this.el.appendChild(this.overlayEl);
     this.clearGameTargets();
+    setTimeout(() => {
+      this.overlayEl.appendChild(this.scoreView.displayFinal());
+      this.overlayEl.removeChild(this.timerView.el);
+      this.overlayEl.appendChild(playAgainButton);
+    }, 2000);
   }
   render() {
     this.overlayEl.style.backgroundColor = 'rgba(255, 255, 255, 0)';
