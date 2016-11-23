@@ -1,14 +1,14 @@
 {
-  "name": "popit-squishit-catchit",
-  "version": "1.0.0",
-  "description": "A game",
+  "name": "pop-the-bubbles",
+  "version": "2.0.0",
+  "description": "A game to pop bubbles.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/erikwithuhk/PopItSquishItCatchIt.git"
+    "url": "git+https://github.com/erikwithuhk/pop-the-bubbles.git"
   },
   "keywords": [
     "game"
@@ -16,9 +16,9 @@
   "author": "Erik Jönsson",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/erikwithuhk/PopItSquishItCatchIt/issues"
+    "url": "https://github.com/erikwithuhk/pop-the-bubbles/issues"
   },
-  "homepage": "https://github.com/erikwithuhk/PopItSquishItCatchIt#readme",
+  "homepage": "https://github.com/erikwithuhk/pop-the-bubbles#readme",
   "devDependencies": {
     "eslint": "^3.4.0",
     "eslint-config-airbnb": "^10.0.1",
